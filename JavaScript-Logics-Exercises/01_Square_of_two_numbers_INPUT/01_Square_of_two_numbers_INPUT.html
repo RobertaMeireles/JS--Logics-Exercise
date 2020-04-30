@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Develop an algorithm that reads two numerical values
+values ​​and presence or result of the sum of the squares of the values ​​read -->
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>verificar</title>
+    </head>
+    <body>
+        <div>
+            <input id="valor1" type="text">
+            <input id="valor2" type="text">
+            <button id="my">Verificar</button>
+            <input id="resultado" type="text">            
+        </div>
+    <script>
+
+        const valorUm = document.querySelector('#valor1');
+        const valorDois = document.querySelector('#valor2');
+        const mybutton = document.querySelector('#my');
+        const resultadoFinal = document.querySelector('#resultado');
+        let total;
+
+
+        mybutton.addEventListener('click', calcular);
+
+
+        function calcular() {
+
+            let primeiroValor = parseInt(valorUm.value); 
+            let segundoValor = parseInt(valorDois.value);
+
+            primeiroValor = primeiroValor * primeiroValor;
+            segundoValor = segundoValor * segundoValor;
+            total = primeiroValor + segundoValor;
+
+            return resultadoFinal.value = total; 
+        }
+
+    </script>
+    </body>
+    </html>

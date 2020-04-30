@@ -1,0 +1,72 @@
+<!--Read two vectors A and B with 6 elements each. Vector A must accept only the
+    entry of even values, while vector B must accept only the entry of
+    odd values. The entry of the values ​​must be validated by the algorithm and not by the user.
+    Construct a vector C which will contain the junction of the elements of vectors A and B,
+    therefore having the dimension 12. Present the vector C-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let inserir;
+        let numberPar;
+        let arrayImpar;
+        let arrayPar;
+        let arrayGeral = [];
+
+        function iniciar() {
+            let numberinfoPar;
+            let numberinfoImpar;
+            arrayPar = []; //sempre zerar o array quando a funçao for chamada
+            arrayImpar = []; //sempre zerar o array quando a funçao for chamada
+            inserir=1;
+
+            while(inserir<=6){
+                numberinfoPar = prompt('Digite um numero par');
+                if((numberinfoPar%2)==0){
+                    arrayPar.push(numberinfoPar);
+                    inserir++
+                    continue
+                }else{
+                    alert('Número invalido, digite um número par!');
+                }
+            }
+            alert('Obrigada, Valores pares inseridos no array!');
+
+            inserir=1;
+
+            while(inserir<=6){
+                numberinfoImpar = prompt('Digite um numero impar');
+                if((numberinfoImpar%3)==0){
+                    arrayImpar.push(numberinfoImpar);
+                inserir++
+                }else{
+                    alert('Número invalido, digite um número par!');
+                }
+            }
+            alert('Obrigada, Valores pares inseridos no array!');
+
+            for(i=0; i<6 ;i++){
+            arrayGeral.push(arrayPar[i]);
+            arrayGeral.push(arrayImpar[i]);
+            }
+        }
+
+
+        iniciar();
+        console.log(arrayPar);
+        console.log(arrayImpar);
+        console.log(arrayGeral);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Read two values ​​for two student grades and print
+        a message saying that the student has passed, if the value of the school average
+        is greater than or equal to 7.
+        
+        If the average value is less than 7, request
+        exam grade, add to the average value and obtain a new average. If the
+        new average is greater than or equal to 5, display a message saying that the
+        student passed the exam. If the student has not passed, indicate a
+        message stating this condition. Present with messages the value
+        the student's average for any condition.-->
+        <style>
+            #exame{
+                display: none;
+            }
+
+            #calcular-exame{
+                display: none;
+            }
+            
+        </style>
+</head>
+<body>
+    <h1>Cadastro das notas do Aluno</h1>
+    <div id=show>
+        <input type="text" name="name" id="name1">
+        <input type="text" name="nota1" id="nota1">
+        <input type="text" name="nota2" id="nota2">
+        <input type="text" name="nota3" id="nota3">
+        <input type="text" name="nota4" id="nota4">
+        <button id="calcular">Calcular</button>
+        <button id="calcular-exame">Calcular Exame</button>
+        <input type="text" name="exame" id="exame">
+
+        <p id="status"></p>
+    </div>
+    <script>
+
+        //declarando variaveis
+        let nameAluno = document.querySelector('#name1');
+        let valor1 = document.querySelector('#nota1');
+        let valor2 = document.querySelector('#nota2');
+        let valor3 = document.querySelector('#nota3');
+        let valor4 = document.querySelector('#nota4');
+        let valorExame = document.querySelector('#exame');
+        const mybutton = document.querySelector('#calcular');
+        const mybuttonExame = document.querySelector('#calcular-exame');
+        const resposta = document.querySelector('#status');
+        let nomeAlunoShow;
+        let media;
+        let mediaAposExame;
+
+
+        //colocar o botao para chamar a função
+        mybutton.addEventListener('click',calcular);
+
+        //colocar o botao para chamar a função
+        mybuttonExame.addEventListener('click',calcularExame);
+
+
+    function calcular() {
+        let nota1Aluno = parseInt(valor1.value);
+        let nota2Aluno = parseInt(valor2.value);
+        let nota3Aluno = parseInt(valor3.value);
+        let nota4Aluno = parseInt(valor4.value);
+        nomeAlunoShow = nameAluno.value;
+
+        media = (nota1Aluno + nota2Aluno + nota3Aluno +nota4Aluno)/4;
+        
+        if(media>=70){
+            resposta.textContent = `O ${nomeAlunoShow} foi aprovado com a media total de ${media}`
+        }else{
+            resposta.textContent = `O ${nomeAlunoShow} precisa de realizar o exame final ${media}`
+        
+        valorExame.style.display = 'block';
+        mybuttonExame.style.display = 'block';
+        }
+    }
+
+    function calcularExame() {
+        let notaExame = parseInt(valorExame.value);
+        nomeAlunoShow = nameAluno.value;
+
+        mediaAposExame = (media + notaExame)/2;
+            if(mediaAposExame<=50){
+                resposta.textContent = `O ${nomeAlunoShow} foi reprovado com a media total de ${mediaAposExame}`;
+            }else{
+                resposta.textContent = `O ${nomeAlunoShow} foi aprovado após realizar o exame final com a media total de ${mediaAposExame}`;
+            }
+        
+    }
+    
+
+
+
+    </script>
+</body>
+</html>

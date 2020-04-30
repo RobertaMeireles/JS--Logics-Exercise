@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Read two numerical values ​​and show the difference from the highest to the lowest-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id=show>
+        <input type="text" name="num1" id="num1">
+        <input type="text" name="num2" id="num2">
+        <button id="verificar">Verificar</button>
+        <p id="status"></p>
+    </div>
+    <script>
+
+
+        let valor1 = document.querySelector('#num1');
+        let valor2 = document.querySelector('#num2');
+        const mybutton = document.querySelector('#verificar');
+        const resposta = document.querySelector('#status');
+
+
+
+        mybutton.addEventListener('click',calcular);
+
+
+    function calcular() {
+        let num1 = parseInt(valor1.value);
+        let num2 = parseInt(valor2.value);
+        
+        if(num1==num2){
+            alert('Valor igual, digite numeros diferentes');
+        }
+        else if (num1<num2){
+            resposta.textContent = `${num1} e menor  que ${num2} e a diferença entre os numeros é de ${num2 - num1}`;   
+        }else if(num1>num2){
+            resposta.textContent = `${num1} e maior que ${num2} e a diferença entre os numeros é de ${num1 - num2}`;
+        }
+    
+    }
+
+
+
+    </script>
+</body>
+</html>

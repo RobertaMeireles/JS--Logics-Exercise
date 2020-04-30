@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Read four whole numbers and display the numbers
+    that are divisible by 2 and 3.-->
+</head>
+<body>
+
+    <script>
+        (function() {
+
+            let valor=1;
+            
+            while(valor<=4){
+                let numbers = prompt("Escreva um numero para verificar se é divisivel por 2 e 3");
+                    if (   ((numbers % 2)==0) && ((numbers % 3)==0)  ) {
+                        console.log(`${numbers} é divisivel por 2 e 3`)
+                    }
+            valor ++
+            }
+        })();
+
+    </script>
+</body>
+</html>

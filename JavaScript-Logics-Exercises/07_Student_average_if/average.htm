@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Read four values ​​for a student's four school grades and print
+        a message saying that the student has passed, if the value of the school average is
+        greater than or equal to 5. If the student has not passed, indicate a message stating
+        this condition. Present with the messages the value of the student's average for
+        any condition.-->
+</head>
+<body>
+    <h1>Cadastro das notas do Aluno</h1>
+    <div id=show>
+        <input type="text" name="name" id="name1">
+        <input type="text" name="nota1" id="nota1">
+        <input type="text" name="nota2" id="nota2">
+        <input type="text" name="nota3" id="nota3">
+        <input type="text" name="nota4" id="nota4">
+        <button id="verificar">Verificar</button>
+        <p id="status"></p>
+    </div>
+    <script>
+
+
+        let nameAluno = document.querySelector('#name1');
+        let valor1 = document.querySelector('#nota1');
+        let valor2 = document.querySelector('#nota2');
+        let valor3 = document.querySelector('#nota3');
+        let valor4 = document.querySelector('#nota4');
+        const mybutton = document.querySelector('#verificar');
+        const resposta = document.querySelector('#status');
+        let media;
+
+
+        mybutton.addEventListener('click',calcular);
+
+
+    function calcular() {
+        let nota1Aluno = parseInt(valor1.value);
+        let nota2Aluno = parseInt(valor2.value);
+        let nota3Aluno = parseInt(valor3.value);
+        let nota4Aluno = parseInt(valor4.value);
+        let nomeAlunoShow = nameAluno.value;
+
+        media = (nota1Aluno + nota2Aluno + nota3Aluno +nota4Aluno)/4;
+        
+        if(media>=5){
+            resposta.textContent = `O ${nomeAlunoShow} foi aprovado com a media total de ${media}`
+        }else{
+            resposta.textContent = `O ${nomeAlunoShow} foi reprovado com a media total de ${media}`
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>

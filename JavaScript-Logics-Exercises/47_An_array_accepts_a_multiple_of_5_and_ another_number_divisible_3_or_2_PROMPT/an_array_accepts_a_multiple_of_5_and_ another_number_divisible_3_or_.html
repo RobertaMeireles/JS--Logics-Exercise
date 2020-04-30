@@ -1,0 +1,78 @@
+<!--
+Read two vectors A and B with a dimension of 10 elements.
+    Vector A must accept only the entry of values ​​that are
+    divisible by 2 and 3, while vector B must accept only the
+    input values ​​that are multiples of 5. Input values
+    must be validated by the algorithm and not by the user. Ramp up
+    a vector C which will contain the junction of the elements of the vectors
+    A and B, therefore having a dimension of 20 elements. To present
+    the vector C. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let inserir;
+        let arrayDiv2e3;
+        let arrayinfoMult5;
+        let arrayGeral = [];
+
+        function iniciar() {
+            let numberinfo2e3;
+            let numberinfoMult5;
+            arrayDiv2e3 = []; 
+            arrayinfoMult5 = []; 
+            inserir=1;
+
+            while(inserir<=10){
+                numberinfo2e3 = prompt('Digite um divisível por 2 e 3');
+                if((numberinfo2e3%2)==0 || (numberinfo2e3%3)==0) {
+                    arrayDiv2e3.push(numberinfo2e3);
+                    inserir++
+                    continue
+                }else{
+                    alert('Número invalido, digite um número divisível por 2 e 3!');
+                }
+            }
+            alert('Obrigada, Valores divisível por 2 e 3 inseridos no array!');
+
+            inserir=1;
+
+            while(inserir<=10){
+                numberinfoMult5 = prompt('Digite um numero multiplo de 5');
+                if((numberinfoMult5%5)==0){
+                    arrayinfoMult5.push(numberinfoMult5);
+                inserir++
+                }else{
+                    alert('Número invalido, digite um número multiplo de 5!');
+                }
+            }
+            alert('Obrigada, Valores multiplos de 5 inseridos no array!');
+
+            for(i=0; i<6 ;i++){
+            arrayGeral.push(arrayDiv2e3[i]);
+            arrayGeral.push(arrayinfoMult5[i]);
+            }
+        }
+
+
+        iniciar();
+        console.log("valores do array de numeros divisiveis por 2 ou 3:")
+        console.log(arrayDiv2e3);
+        console.log("valores do array de numeros multiplos de 5:")
+        console.log(arrayinfoMult5);
+        console.log("valores da junçao dos arrays:")
+        console.log(arrayGeral);
+
+
+    </script>
+    
+</body>
+</html>

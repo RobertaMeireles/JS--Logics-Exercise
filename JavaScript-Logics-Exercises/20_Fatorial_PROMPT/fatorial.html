@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Calculation of the factorial of any number entered by the user. The algorithm
+    should also have the ability to continue to calculate factorials until the user
+    no longer wish to use the program, and should therefore ask the user to continue
+    or not. -->
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>verificar</title>
+    </head>
+    <body>
+    <script>
+
+ 
+    let factorial4;
+    let resp = "S";
+
+
+    const calculo4 = () => {
+
+        while (resp == "S") {
+            factorial4 = 1;
+
+            let n = prompt("Factorial de que número ?");
+
+            for (let i = 1; i <= n; i++) {
+                factorial4 *= i;
+            }
+
+        console.log(`Factorial de ${n} e = ${factorial4}`);
+        resp = prompt("Deseja Continuar ? (S/N)");
+        
+        }   
+
+    }
+
+calculo4();
+
+    /*
+    while(resposta =="S"){
+        resultadoFatorizacao = 1;
+        let informe=prompt('Escreva um numero para fazer a fatoração:');
+        resultadoFatorizacao = fat(informe);
+        resposta=prompt('Deseja continuar (S/N)?');
+
+    }
+
+    
+    /*function fat(a) {
+    for(let i=1; i<=a; i++){
+        fatorial = fatorial*i;
+        
+        }
+    //return fatorial
+    return alert(`A fatorização de ${a} é ${fatorial}`);
+    }*/
+
+    </script>
+    </body>
+    </html>

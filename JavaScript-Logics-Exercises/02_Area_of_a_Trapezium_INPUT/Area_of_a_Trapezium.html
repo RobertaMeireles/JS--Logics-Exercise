@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Develop an algorithm that performs and presents the calculation of the area of ​​a trapezoid -->
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>verificar</title>
+    </head>
+    <body>
+        <h1>Cálcule a área de um trapézio</h1>
+        <div>
+            Base Maior:<input id="maior" type="text">
+            Base Menor:<input id="menor" type="text">
+            Altura<input id="altura" type="text">
+            <button id="my">Verificar</button>
+            Resultado<input id="resultado" type="text">            
+        </div>
+    <script>
+
+
+        const valorMaior = document.querySelector('#maior');
+        const valorMenor = document.querySelector('#menor');
+        const valorAltura = document.querySelector('#altura');
+        const mybutton = document.querySelector('#my');
+        const resultadoFinal = document.querySelector('#resultado');
+        let area;
+
+ 
+        mybutton.addEventListener('click', calcular);
+
+
+        function calcular() {
+
+            let baseMaior = parseInt(valorMaior.value); 
+            let baseMenor = parseInt(valorMenor.value);
+            let alturaBase = parseInt(valorAltura.value);
+
+
+            area = (baseMaior + baseMenor) * alturaBase /2;
+
+   
+            return resultadoFinal.value = area; 
+        }
+
+    </script>
+    </body>
+    </html>

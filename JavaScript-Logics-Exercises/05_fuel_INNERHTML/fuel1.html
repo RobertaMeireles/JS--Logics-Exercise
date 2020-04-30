@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Calculate the amount of liters of fuel spent on a trip,
+        using a car that does 12 km per liter.
+        
+        To obtain the calculation, the user must provide:
+        - the time spent.
+        - the average speed during the journey.
+
+        In this way, it will be possible to obtain the distance covered with the formula
+        DISTANCE <- TIME * SPEED.
+
+        Having the distance value, just calculate the number of liters of
+        fuel used on the trip with the formula
+        SPENDING LITERS <- DISTANCE / 12.
+        
+        The program must present the values
+        average speed, time spent traveling, distance traveled and the
+        number of liters used on the trip.  -->
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>verificar</title>
+    <style>
+        #addValueButton {
+            display: none;
+        }
+    </style>
+    </head>
+    <body>
+        <div>
+            <h1>Cálculo da quantidade de litros de combustível gasta numa viagem</h1>
+            <h2>Informe:</h2>
+            Tempo Gasto: <input id="time" type="text">
+            velocidade média durante a viagem: <input id="velocidadeMedia" type="text">
+            <button id="my">Verificar</button>
+            <p id="informaçao"></p>
+
+
+            <button id="addValueButton">Nova verificaçao</button>
+            
+    <script>
+
+
+        const valorTime = document.querySelector('#time');
+        const valorVelocidade = document.querySelector('#velocidadeMedia');
+        const mybutton = document.querySelector('#my');
+        let imprime = document.querySelector("#informaçao")
+        const litro = 12;
+        let litrosGastos;
+
+ 
+        mybutton.addEventListener('click', calcular);
+
+
+        const novaVerificacaoButton = document.querySelector('#addValueButton');
+
+        novaVerificacaoButton.addEventListener('click', newCalculo);
+ 
+
+        function calcular(){
+
+            let velocidade = parseInt(valorVelocidade.value); 
+            let time = parseInt(valorTime.value);
+
+            distancia = time*velocidade; 
+            
+            litrosGastos = distancia / 12; 
+
+            novaVerificacaoButton.style.display = 'block';
+
+            return imprime.innerHTML = `A velocidade média é de ${velocidade}km/h, o tempo gasto na 
+            viagem e de ${time} horas, a distância percorrida e de ${distancia} km e a quantidade de 
+            litros utilizada na viagem e de ${litrosGastos} litros`;
+        }
+
+
+            function newCalculo() {
+            novaVerificacaoButton.style.display = 'none';
+            valorTime.value = "";
+            valorVelocidade.value = "";
+            imprime.innerHTML = "";
+        }
+
+        
+    </script>
+    </body>
+    </html>
